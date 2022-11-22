@@ -99,3 +99,28 @@ Examples (grade/CFU):
 > the standard input: in Go, operating system-related functions/variables are inside the os package.
 
 > Hint: strconv package might be useful.
+
+### Word count
+
+Write a program that opens and read a file (the name can be hard-coded inside the source code) and
+counts all occurrences for every different word. The output should be the list of words and the number
+of times the word is present in the text (one per line).
+
+To test with a long text, you can download The Project Gutenberg eBook of Alice’s Adventures in
+Wonderland, by Lewis Carroll (in this case I have used The Arabian Nights, you can find it in the txt folder).
+
+### Web-train
+
+In this exercise, you need to create a web server that implements the exercise “Help the train company
+to arrive in time!” via HTTP. JSON should be received via an HTTP POST request (in the body), and the
+response JSON should be sent in the body of the HTTP response.
+
+### Web-GPA
+
+This exercise is identical to the “Calculate your GPA”, except that input data must be sent as JSON via
+an HTTP POST request to the server, and the response should be provided as plain text.
+
+### Web-Count
+
+This exercise is identical to the “Word count”, except that input data must be sent as plain text via an
+HTTP POST request to the server, and the response should be provided as plain text.
