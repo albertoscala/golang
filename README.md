@@ -124,3 +124,52 @@ an HTTP POST request to the server, and the response should be provided as plain
 
 This exercise is identical to the “Word count”, except that input data must be sent as plain text via an
 HTTP POST request to the server, and the response should be provided as plain text.
+
+## Exercises part 2
+
+> You should be able to do these exercises after the second Go theory lecture.
+
+Welcome commander! We have a new mission for you. The Republic is in danger! A rogue general
+wants to impose his dictatorship. You will be sent back in time to block the war and maintain the
+integrity of the Republic and its Senate! Here is the profile of your primary opponent:
+
+> Gaius Julius Caesar was an important Roman general and dictator. He led an army that conquered
+> many territories and ultimately started a civil war inside the Roman Republic, transforming it into
+> the Roman Empire.
+
+Your mission is to block Caesar before he crosses the Rubicon to stop the imminent civil war!
+
+You will be accompanied by your trusted *Go Compiler*
+
+### Caesar’s cipher
+
+Gallia Cisalpina, January 5, 49 BC. You landed in what will be the north part of Italy in 2000 years, while
+now it’s a Roman province managed by Celts. Based on your history courses in High School, you know
+that Caesar must be here, waiting to cross the Rubicon. In the past days, Caesar prepared an army,
+and it’s coordinating his attack with other generals. You don’t have weapons or people, so you can’t
+compete. You must use another strategy.
+
+To avoid being intercepted, Caesar used cryptography (yes, nearly 2070 years ago!) to protect messages
+to commanders and other generals. Caesar’s cipher is a simple substitution cipher - see the Wikipedia
+page for the algorithm: https://en.wikipedia.org/wiki/Caesar_cipher.
+
+Thanks to your trusted companion (the Go Compiler), you can create false messages to send to other
+generals. You can put generals against each other!
+
+> In this exercise, you are asked to implement a structure that encrypts messages and prints them
+> to the screen. The struct should conform to io.Writer so that you can use this structure to
+> encrypt anything!
+>
+> Note: Caesar’s cipher is defined only for alphabet letters, so everything else can be left as it is. It
+> means that if you print non-letters (numbers, symbols, etc.), they should be printed to the screen
+> unchanged. Lowercase letters should be replaced with uppercase letters.
+
+In the end, you should be able to use it as:
+
+```go
+caesarCipher := MyCaesarCipher{Key: 23}
+fmt.Fprintln(&caesarCipher, "Marcus Tullius is stealing your wife!")
+```
+
+(the output depends on the key).
+> Note: do NOT use external libraries.
