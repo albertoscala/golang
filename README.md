@@ -3,7 +3,7 @@
 
 ## Exercises part 1
 
-### Help the train company to arrive on time!
+### [Help the train company to arrive on time!](https://github.com/albertoscala/golang/blob/main/train_company.go)
 
 Write a program that reads a JSON structure from a file representing a train track and writes an updated
 JSON file with calculated values.
@@ -75,7 +75,7 @@ An example of the output is:
 
 > Hint: use struct for reading/writing JSON. See encoding/json for details.
 
-### Calculate your GPA
+### [Calculate your GPA](https://github.com/albertoscala/golang/blob/main/gpa_calculator.go)
 
 Write a program to calculate the Grade point average (GPA) of a given set of scores. The GPA for
 Computer Science courses in Sapienza is calculated as follows:
@@ -100,7 +100,7 @@ Examples (grade/CFU):
 
 > Hint: strconv package might be useful.
 
-### Word count
+### [Word count](https://github.com/albertoscala/golang/blob/main/count_words.go)
 
 Write a program that opens and read a file (the name can be hard-coded inside the source code) and
 counts all occurrences for every different word. The output should be the list of words and the number
