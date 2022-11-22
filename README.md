@@ -11,38 +11,49 @@ You should calculate the following:
 - The total distance
 - The total travel time in minutes
 - The arrival time
+
 Input file example:
 ```
 {
-"line": "FL7",
-"stations": [
-{
-"name": "Latina",
-"distance": 0,
-"ETA-from-previous-station": 0,
-"platform": "1T",
-},
-{
-"name": "Cisterna di Latina",
-"distance": 18,
-"ETA-from-previous-station": 7,
-"platform": "3",
-},
-{
-{
-"line": "FL7",
-"stations": [
-{
-"name": "Latina",
-"distance": 0,
-"ETA-from-previous-station": 0,
-"platform": "1T",
-},
-{
-"name": "Cisterna di Latina",
-"distance": 18,
-"ETA-from-previous-station": 7,
-"platform": "3",
-},
-{
+    "line": "FL7",
+    "stations": [
+        {
+            "name": "Latina",
+            "distance": 0,
+            "ETA-from-previous-station": 0,
+            "platform": "1T",
+        },
+        {
+            "name": "Cisterna di Latina",
+            "distance": 18,
+            "ETA-from-previous-station": 7,
+            "platform": "3",
+        },
+            "name": "Campoleone",
+            "distance": 26,
+            "ETA-from-previous-station": 10,
+            "platform": "4",
+        },
+        {
+            "name": "Pomezia - S. Palomba",
+            "distance": 19,
+            "ETA-from-previous-station": 7,
+            "platform": "2",
+        },
+        {
+            "name": "Torricola",
+            "distance": 21,
+            "ETA-from-previous-station": 8,
+            "platform": "2",
+        },
+        {
+            "name": "Roma Termini",
+            "distance": 32,
+            "ETA-from-previous-station": 12,
+            "platform": "16",
+        },
+    ],
+    "departingTime": "2022-11-02T09:00:00Z"
+}
+
 ```
