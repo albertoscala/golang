@@ -1,5 +1,5 @@
 # golang 
-### Collections of exercises to learn and become fluent in Go programming language from the WASA (Web and Software architecture) courses
+### Collections of exercises to learn and become fluent in Go programming language taken from the WASA (Web and Software architecture) courses
 
 ## Exercises part 1
 
@@ -13,7 +13,7 @@ You should calculate the following:
 - The arrival time
 
 Input file example:
-```
+```json
 {
     "line": "FL7",
     "stations": [
@@ -21,37 +21,38 @@ Input file example:
             "name": "Latina",
             "distance": 0,
             "ETA-from-previous-station": 0,
-            "platform": "1T",
+            "platform": "1T"
         },
         {
             "name": "Cisterna di Latina",
             "distance": 18,
             "ETA-from-previous-station": 7,
-            "platform": "3",
+            "platform": "3"
         },
+        {
             "name": "Campoleone",
             "distance": 26,
             "ETA-from-previous-station": 10,
-            "platform": "4",
+            "platform": "4"
         },
         {
             "name": "Pomezia - S. Palomba",
             "distance": 19,
             "ETA-from-previous-station": 7,
-            "platform": "2",
+            "platform": "2"
         },
         {
             "name": "Torricola",
             "distance": 21,
             "ETA-from-previous-station": 8,
-            "platform": "2",
+            "platform": "2"
         },
         {
             "name": "Roma Termini",
             "distance": 32,
             "ETA-from-previous-station": 12,
-            "platform": "16",
-        },
+            "platform": "16"
+        }
     ],
     "departingTime": "2022-11-02T09:00:00Z"
 }
