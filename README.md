@@ -109,18 +109,18 @@ of times the word is present in the text (one per line).
 To test with a long text, you can download The Project Gutenberg eBook of Alice’s Adventures in
 Wonderland, by Lewis Carroll (in this case I have used The Arabian Nights, you can find it in the txt folder).
 
-### Web-train
+### [Web-train](https://github.com/albertoscala/golang/blob/main/train_company_web.go)
 
 In this exercise, you need to create a web server that implements the exercise “Help the train company
 to arrive in time!” via HTTP. JSON should be received via an HTTP POST request (in the body), and the
 response JSON should be sent in the body of the HTTP response.
 
-### Web-GPA
+### [Web-GPA](https://github.com/albertoscala/golang/blob/main/gpa_calculator_web.go)
 
 This exercise is identical to the “Calculate your GPA”, except that input data must be sent as JSON via
 an HTTP POST request to the server, and the response should be provided as plain text.
 
-### Web-Count
+### [Web-Count](https://github.com/albertoscala/golang/blob/main/count_words_web.go)
 
 This exercise is identical to the “Word count”, except that input data must be sent as plain text via an
 HTTP POST request to the server, and the response should be provided as plain text.
@@ -141,7 +141,7 @@ Your mission is to block Caesar before he crosses the Rubicon to stop the immine
 
 You will be accompanied by your trusted *Go Compiler*
 
-### Caesar’s cipher
+### [Caesar’s cipher](https://github.com/albertoscala/golang/blob/main/ceaser_cypher.go)
 
 Gallia Cisalpina, January 5, 49 BC. You landed in what will be the north part of Italy in 2000 years, while
 now it’s a Roman province managed by Celts. Based on your history courses in High School, you know
