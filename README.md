@@ -173,3 +173,29 @@ fmt.Fprintln(&caesarCipher, "Marcus Tullius is stealing your wife!")
 
 (the output depends on the key).
 > Note: do NOT use external libraries.
+
+### Breaking the cipher!
+
+*Gallia Cisalpina*, January 9, 49 BC. In less than 48 hours, the Republic will be doomed! Your tentative of subverting the attack failed because you need to know which key to use, and most importantly, you don’t know generals at all!
+
+You need to intercept them first.
+
+While getting the message itself is straightforward, they’re encrypted. However, this is not a problem for the Go Compiler!
+
+You can break Caesar’s cipher in different ways:
+- *Brute-force*: slow but easier to implement;
+- *Frequency analysis*: fast but slightly more complex.
+
+Unfortunately, you don’t have a dictionary with word frequency, so you must use *brute-force*. So, given that your Go Compiler can use multiple CPUs, you decide to use Goroutines!
+
+> The goal of this exercise is to implement Caesar’s cipher cracker using goroutines for generating
+> the potential plain text (the original text) for each possible key, given the cipher text (the encrypted
+> text).
+> 
+> Output of all combinations is ok - you can assume that a human will look at all messages to spot
+> the right one.
+
+> Note: do NOT use external libraries.
+
+> Trivia: “Brute-force” term comes from “Brute”, which in turn comes from “Brutus”. Caesar was
+> killed by a senator named “Brutus” in 44 BC.
