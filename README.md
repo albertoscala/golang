@@ -3,7 +3,7 @@
 
 ## Exercises part 1
 
-### Help the train company to arrive on time!
+### [Help the train company to arrive on time!](https://github.com/albertoscala/golang/blob/main/train_company.go)
 
 Write a program that reads a JSON structure from a file representing a train track and writes an updated
 JSON file with calculated values.
@@ -75,7 +75,7 @@ An example of the output is:
 
 > Hint: use struct for reading/writing JSON. See encoding/json for details.
 
-### Calculate your GPA
+### [Calculate your GPA](https://github.com/albertoscala/golang/blob/main/gpa_calculator.go)
 
 Write a program to calculate the Grade point average (GPA) of a given set of scores. The GPA for
 Computer Science courses in Sapienza is calculated as follows:
@@ -100,7 +100,7 @@ Examples (grade/CFU):
 
 > Hint: strconv package might be useful.
 
-### Word count
+### [Word count](https://github.com/albertoscala/golang/blob/main/count_words.go)
 
 Write a program that opens and read a file (the name can be hard-coded inside the source code) and
 counts all occurrences for every different word. The output should be the list of words and the number
@@ -109,18 +109,18 @@ of times the word is present in the text (one per line).
 To test with a long text, you can download The Project Gutenberg eBook of Alice’s Adventures in
 Wonderland, by Lewis Carroll (in this case I have used The Arabian Nights, you can find it in the txt folder).
 
-### Web-train
+### [Web-train](https://github.com/albertoscala/golang/blob/main/train_company_web.go)
 
 In this exercise, you need to create a web server that implements the exercise “Help the train company
 to arrive in time!” via HTTP. JSON should be received via an HTTP POST request (in the body), and the
 response JSON should be sent in the body of the HTTP response.
 
-### Web-GPA
+### [Web-GPA](https://github.com/albertoscala/golang/blob/main/gpa_calculator_web.go)
 
 This exercise is identical to the “Calculate your GPA”, except that input data must be sent as JSON via
 an HTTP POST request to the server, and the response should be provided as plain text.
 
-### Web-Count
+### [Web-Count](https://github.com/albertoscala/golang/blob/main/count_words_web.go)
 
 This exercise is identical to the “Word count”, except that input data must be sent as plain text via an
 HTTP POST request to the server, and the response should be provided as plain text.
@@ -133,31 +133,31 @@ Welcome commander! We have a new mission for you. The Republic is in danger! A r
 wants to impose his dictatorship. You will be sent back in time to block the war and maintain the
 integrity of the Republic and its Senate! Here is the profile of your primary opponent:
 
-> Gaius Julius Caesar was an important Roman general and dictator. He led an army that conquered
+> [Gaius Julius Caesar](https://en.wikipedia.org/wiki/Julius_Caesar) was an important Roman general and dictator. He led an army that conquered
 > many territories and ultimately started a civil war inside the Roman Republic, transforming it into
 > the Roman Empire.
 
-Your mission is to block Caesar before he crosses the Rubicon to stop the imminent civil war!
+Your mission is to block Caesar before he [crosses the Rubicon](https://en.wikipedia.org/wiki/Crossing_the_Rubicon) to stop the imminent civil war!
 
 You will be accompanied by your trusted *Go Compiler*
 
-### Caesar’s cipher
+### [Caesar’s cipher](https://github.com/albertoscala/golang/blob/main/ceaser_cypher.go)
 
-Gallia Cisalpina, January 5, 49 BC. You landed in what will be the north part of Italy in 2000 years, while
+*[Gallia Cisalpina](https://en.wikipedia.org/wiki/Crossing_the_Rubicon)*, January 5, 49 BC. You landed in what will be the north part of Italy in 2000 years, while
 now it’s a Roman province managed by Celts. Based on your history courses in High School, you know
 that Caesar must be here, waiting to cross the Rubicon. In the past days, Caesar prepared an army,
 and it’s coordinating his attack with other generals. You don’t have weapons or people, so you can’t
 compete. You must use another strategy.
 
-To avoid being intercepted, Caesar used cryptography (yes, nearly 2070 years ago!) to protect messages
-to commanders and other generals. Caesar’s cipher is a simple substitution cipher - see the Wikipedia
+To avoid being intercepted, Caesar used *cryptography* (yes, nearly 2070 years ago!) to protect messages
+to commanders and other generals. *Caesar’s cipher* is a simple substitution cipher - see the Wikipedia
 page for the algorithm: https://en.wikipedia.org/wiki/Caesar_cipher.
 
 Thanks to your trusted companion (the Go Compiler), you can create false messages to send to other
 generals. You can put generals against each other!
 
 > In this exercise, you are asked to implement a structure that encrypts messages and prints them
-> to the screen. The struct should conform to io.Writer so that you can use this structure to
+> to the screen. The `struct` should conform to `io.Writer` so that you can use this structure to
 > encrypt anything!
 >
 > Note: Caesar’s cipher is defined only for alphabet letters, so everything else can be left as it is. It
