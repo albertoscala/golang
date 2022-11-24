@@ -199,3 +199,31 @@ Unfortunately, you don’t have a dictionary with word frequency, so you must us
 
 > Trivia: “Brute-force” term comes from “Brute”, which in turn comes from “Brutus”. Caesar was
 > killed by a senator named “Brutus” in 44 BC.
+
+### Back to the future!
+
+The mission is complete! Generals are fighting each other - you saved the Republic! Now, it’s about time to get back to the future!
+
+Your supervisor gave you the coordinates for the temporal wormhole, but they are encoded, and you need to derive them. To do that, they gave you the derivation function generator.
+
+However, to avoid misuse, your supervisor requires you to provide (to the generator) a function that adds the year of your birth to a value and returns the resulting value.
+
+The result of the generator will be a function that you can call with a time (e.g., time.Now()) to get temporal coordinates.
+
+The generator is:
+
+```go
+func temporalCoordinatesDerivation(yourBirthYear func(int64) int64) func(time.Time) (int64, int64) {
+    x := 16342 * yourBirthYear(52634)
+    y := 88345 * yourBirthYear(35237)
+    return func(t time.Time) (int64, int64) {
+        return x + t.Unix(), y + t.Unix()
+    }
+}
+```
+
+> In this exercise, you are required to:
+> - define a function that adds your birth date to a parameter, and return the results >>(function
+> signature: func(int64) int64);
+> - use the resulting function from the generator to obtain the coordinates (function >   signature
+> func(time.Time) (int64, int64))
