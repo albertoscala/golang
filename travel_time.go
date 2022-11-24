@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -18,5 +19,6 @@ func temporalCoordinatesDerivation(yourBirthYear func(int64) int64) func(time.Ti
 }
 
 func main() {
-
+	coordinates := temporalCoordinatesDerivation(yourBirthYear)
+	fmt.Println("Coordinates: ", coordinates)
 }
