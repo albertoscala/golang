@@ -29,5 +29,5 @@ func main() {
 		result = read_grade()
 	}
 
-	fmt.Println("Your shitty GPA is: ", gpa/float32(credits))
+	fmt.Println("Your PA is: ", gpa/float32(credits))
 }
