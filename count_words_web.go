@@ -11,7 +11,10 @@ import (
 func countWordsWeb(w http.ResponseWriter, r *http.Request) {
 	counter := make(map[string]int)
 
-	file, _ := io.ReadAll(r.Body)
+	file, err := io.ReadAll(r.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	txt := string(file[:])
 
@@ -48,7 +51,10 @@ func countWordsWeb(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/text")
-	w.Write([]byte(result))
+	_, err = w.Write([]byte(result))
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {

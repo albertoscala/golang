@@ -21,7 +21,11 @@ func getWasa(w http.ResponseWriter, r *http.Request) {
 	s := fmt.Sprintf("Even in %d attemps \n", n)
 
 	fmt.Println(s)
-	io.WriteString(w, s)
+
+	_, err := io.WriteString(w, s)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {

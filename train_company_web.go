@@ -8,31 +8,18 @@ import (
 	"time"
 )
 
-type Station struct {
-	Name     string `json:"name"`
-	Distance int    `json:"distance"`
-	ETA      int    `json:"ETA-from-previous-station"`
-	Platform string `json:"platform"`
-}
-
-type TrainLine struct {
-	Line      string    `json:"line"`
-	Stations  []Station `json:"stations"`
-	Departure time.Time `json:"departingTime"`
-}
-
-type LineStats struct {
-	TotalDistance int       `json:"totalDistance"`
-	TravelTime    int       `json:"travelTime"`
-	ArrivalTime   time.Time `json:"arrivalTime"`
-}
-
 func trainCompanyWeb(w http.ResponseWriter, r *http.Request) {
-	file, _ := io.ReadAll(r.Body)
+	file, err := io.ReadAll(r.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	line := TrainLine{}
 
-	_ = json.Unmarshal(file, &line)
+	err = json.Unmarshal(file, &line)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	var totalDistance int
 	var travelTime int
@@ -46,13 +33,17 @@ func trainCompanyWeb(w http.ResponseWriter, r *http.Request) {
 
 	stats.ArrivalTime = line.Departure.Add(time.Minute * time.Duration(travelTime))
 
-	infos, _ := json.MarshalIndent(stats, "", " ")
+	infos, err := json.MarshalIndent(stats, "", " ")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/text")
-	w.Write(infos)
-
-	return
+	_, err = w.Write(infos)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {

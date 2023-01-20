@@ -2,7 +2,8 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"log"
+	"os"
 	"time"
 )
 
@@ -26,11 +27,17 @@ type LineStats struct {
 }
 
 func main() {
-	file, _ := ioutil.ReadFile("trains.json")
+	file, err := os.ReadFile("trains.json")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	line := TrainLine{}
 
-	_ = json.Unmarshal(file, &line)
+	err = json.Unmarshal(file, &line)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	var totalDistance int
 	var travelTime int
@@ -44,7 +51,13 @@ func main() {
 
 	stats.ArrivalTime = line.Departure.Add(time.Minute * time.Duration(travelTime))
 
-	info, _ := json.MarshalIndent(stats, "", " ")
+	info, err := json.MarshalIndent(stats, "", " ")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	_ = ioutil.WriteFile("infos.json", info, 0644)
+	err = os.WriteFile("infos.json", info, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

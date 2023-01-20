@@ -2,14 +2,18 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"log"
+	"os"
 	"strings"
 )
 
 func main() {
 	counter := make(map[string]int)
 
-	file, _ := ioutil.ReadFile("TheArabianNights.txt")
+	file, err := os.ReadFile("TheArabianNights.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	txt := string(file[:])
 

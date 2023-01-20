@@ -1,23 +1,25 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"log"
 	"net/http"
 )
 
-func greetings(w http.ResponseWriter, r *http.Request) {
+func postGreetings(w http.ResponseWriter, r *http.Request) {
 	name, err := io.ReadAll(r.Body)
 	if err != nil {
-		fmt.Println(err)
-		return
+		log.Fatal(err)
 	}
-	io.WriteString(w, "Hi "+string(name)+"!\n")
+
+	_, err = io.WriteString(w, "Hi "+string(name)+"!\n")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
-	http.HandleFunc("/", greetings)
+	http.HandleFunc("/", postGreetings)
 
 	log.Fatal(http.ListenAndServe(":8090", nil))
 }

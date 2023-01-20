@@ -13,32 +13,24 @@ type Exam struct {
 	Credits int `json:"credits"`
 }
 
-func gpa_calc(exams []Exam) float32 {
-	gpa := float32(0)
-	cfu := float32(0)
-
-	for _, exam := range exams {
-		gpa += float32(exam.Grade * exam.Credits)
-		cfu += float32(exam.Credits)
+func gpaCalculatorWeb(w http.ResponseWriter, r *http.Request) {
+	file, err := io.ReadAll(r.Body)
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	return gpa / cfu
-}
-
-func gpaCalculatorWeb(w http.ResponseWriter, r *http.Request) {
-	file, _ := io.ReadAll(r.Body)
-
-	exams := []Exam{}
+	var exams []Exam
 
 	_ = json.Unmarshal(file, &exams)
 
-	gpa := fmt.Sprintf("%f", gpa_calc(exams))
+	gpa := fmt.Sprintf("%f", gpaCalc(exams))
 
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/text")
-	w.Write([]byte(gpa + "\n"))
-
-	return
+	_, err = w.Write([]byte(gpa + "\n"))
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {

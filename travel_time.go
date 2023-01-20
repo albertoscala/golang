@@ -5,7 +5,6 @@ import (
 	"time"
 )
 
-// NON HO CAPITO COME DOVREI AGGIUNGERE LA DATA DI NASCITA AD UN NUMERO
 func yourBirthYear(number int64) int64 {
 	return number + 2002
 }

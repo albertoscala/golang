@@ -6,13 +6,17 @@ import (
 	"net/http"
 )
 
-func greetings(w http.ResponseWriter, r *http.Request) {
-	var name string = r.URL.Query().Get("name")
-	io.WriteString(w, "Hi "+name+"!\n")
+func getGreetings(w http.ResponseWriter, r *http.Request) {
+	name := r.URL.Query().Get("name")
+
+	_, err := io.WriteString(w, "Hi "+name+"!\n")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
-	http.HandleFunc("/", greetings)
+	http.HandleFunc("/", getGreetings)
 
 	log.Fatal(http.ListenAndServe(":8090", nil))
 }
